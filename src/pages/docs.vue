@@ -21,6 +21,7 @@ import { whenever, useEventListener, useMagicKeys } from '@vueuse/core';
 
 import { useStore } from '~/store';
 import JejudoSource from '~/data/JejudoSource';
+import CTSSource from '~/data/CTSSource';
 import { fetchError } from '~/util/fetchError';
 
 import Sidebar from '~/components/Sidebar.vue';
@@ -41,6 +42,7 @@ const { Ctrl_K } = useMagicKeys({
 
 const sources = reactive({
 	[JejudoSource.id]: JejudoSource,
+	[CTSSource.id]: CTSSource
 });
 
 const showBackToTop = ref(false);
