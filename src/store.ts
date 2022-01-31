@@ -3,6 +3,7 @@ import { createStore, useStore as baseUseStore, Store } from 'vuex';
 
 import DocsSource from './data/DocsSource';
 import JejudoSource from './data/JejudoSource';
+import CTSSource from './data/CTSSource';
 
 import { Documentation, DocumentationCustomFile } from './interfaces/Documentation';
 import { SearchTerm, DocumentType, DocumentLink } from './util/search';
@@ -31,6 +32,7 @@ export const store = createStore<State>({
 	state: {
 		sources: [
 			{ source: JejudoSource, name: JejudoSource.name, id: JejudoSource.id },
+			{ source: CTSSource, name: CTSSource.name, id: CTSSource.id },
 		],
 		source: JejudoSource,
 		tag: JejudoSource.defaultTag,
