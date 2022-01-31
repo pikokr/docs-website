@@ -361,7 +361,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { onClickOutside, useBreakpoints, breakpointsTailwind, whenever } from '@vueuse/core';
 
 import { useStore } from '~/store';
-import MainSource from '~/data/MainSource';
+import MainSource from '~/data/JejudoSource';
 import { isShowPrivates } from '~/util/showPrivates';
 
 import {

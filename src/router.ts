@@ -3,5 +3,11 @@ import routes from 'virtual:generated-pages';
 
 export default createRouter({
 	history: createWebHashHistory(),
-	routes,
+	routes: [
+		{
+			path: '/',
+			redirect: '/docs'
+		},
+		...routes
+	],
 });

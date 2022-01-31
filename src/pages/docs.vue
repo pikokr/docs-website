@@ -20,13 +20,7 @@ import { useRouter, useRoute } from 'vue-router';
 import { whenever, useEventListener, useMagicKeys } from '@vueuse/core';
 
 import { useStore } from '~/store';
-import MainSource from '~/data/MainSource';
-import CollectionSource from '~/data/CollectionSource';
-import BuildersSource from '~/data/BuildersSource';
-import VoiceSource from '~/data/VoiceSource';
-import RESTSource from '~/data/RESTSource';
-import CommandoSource from '~/data/CommandoSource';
-import RPCSource from '~/data/RPCSource';
+import JejudoSource from '~/data/JejudoSource';
 import { fetchError } from '~/util/fetchError';
 
 import Sidebar from '~/components/Sidebar.vue';
@@ -46,14 +40,7 @@ const { Ctrl_K } = useMagicKeys({
 });
 
 const sources = reactive({
-	[MainSource.id]: MainSource,
-	main: MainSource,
-	[CollectionSource.id]: CollectionSource,
-	[BuildersSource.id]: BuildersSource,
-	[VoiceSource.id]: VoiceSource,
-	[RESTSource.id]: RESTSource,
-	[CommandoSource.id]: CommandoSource,
-	[RPCSource.id]: RPCSource,
+	[JejudoSource.id]: JejudoSource,
 });
 
 const showBackToTop = ref(false);
@@ -89,13 +76,13 @@ const watchRoute = async () => {
 		await store.dispatch({
 			type: 'fetchDocs',
 			// @ts-expect-error
-			inputSource: sources[route.params.source] ?? MainSource,
+			inputSource: sources[route.params.source] ?? JejudoSource,
 			// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 			inputTag: route.params.tag ?? tag.value,
 		});
 
 		// @ts-expect-error
-		await store.dispatch({ type: 'fetchTags', currentSource: sources[route.params.source] ?? MainSource });
+		await store.dispatch({ type: 'fetchTags', currentSource: sources[route.params.source] ?? JejudoSource });
 	}
 
 	// @ts-expect-error
@@ -109,10 +96,10 @@ const watchRoute = async () => {
 		return router.replace({
 			name: 'docs-source-tag-category-file',
 			params: {
-				source: MainSource.id,
-				tag: MainSource.defaultTag,
-				category: MainSource.defaultFile.category,
-				file: MainSource.defaultFile.id,
+				source: JejudoSource.id,
+				tag: JejudoSource.defaultTag,
+				category: JejudoSource.defaultFile.category,
+				file: JejudoSource.defaultFile.id,
 			},
 		});
 	}
@@ -132,10 +119,10 @@ const watchRoute = async () => {
 		return router.replace({
 			name: 'docs-source-tag-category-file',
 			params: {
-				source: source.value?.id ?? MainSource.id,
+				source: source.value?.id ?? JejudoSource.id,
 				tag: source.value?.recentTag || source.value?.defaultTag,
-				category: source.value?.defaultFile.category ?? MainSource.defaultFile.category,
-				file: source.value?.defaultFile.id ?? MainSource.defaultFile.id,
+				category: source.value?.defaultFile.category ?? JejudoSource.defaultFile.category,
+				file: source.value?.defaultFile.id ?? JejudoSource.defaultFile.id,
 			},
 		});
 	}
@@ -145,10 +132,10 @@ const watchRoute = async () => {
 		return router.replace({
 			name: 'docs-source-tag-category-file',
 			params: {
-				source: source.value?.id ?? MainSource.id,
-				tag: tag.value ?? MainSource.defaultTag,
-				category: source.value?.defaultFile.category ?? MainSource.defaultFile.category,
-				file: source.value?.defaultFile.id ?? MainSource.defaultFile.id,
+				source: source.value?.id ?? JejudoSource.id,
+				tag: tag.value ?? JejudoSource.defaultTag,
+				category: source.value?.defaultFile.category ?? JejudoSource.defaultFile.category,
+				file: source.value?.defaultFile.id ?? JejudoSource.defaultFile.id,
 			},
 		});
 	}

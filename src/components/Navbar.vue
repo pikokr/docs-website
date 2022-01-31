@@ -4,26 +4,6 @@
 			<div class="max-w-7xl mx-auto px-2 sm:px-4 md:flex md:justify-between lg:px-8">
 				<nav class="hidden md:flex md:py-2 md:space-x-4 lg:space-x-8" aria-label="Global navigation">
 					<router-link
-						to="/"
-						class="
-							text-gray-200
-							hover:bg-discord-blurple-630 hover:text-white
-							rounded-md
-							py-2
-							px-3
-							inline-flex
-							items-center
-							text-sm
-							font-semibold
-							focus:outline-none
-							focus-visible:ring-1 focus-visible:ring-white
-						"
-						active-class="bg-discord-blurple-600"
-					>
-						discord.js
-					</router-link>
-
-					<router-link
 						to="/docs"
 						class="
 							text-gray-200
@@ -40,50 +20,8 @@
 						"
 						active-class="bg-discord-blurple-600"
 					>
-						Documentation
+						pikokr Docs
 					</router-link>
-
-					<a
-						:href="`https://github.com/${repository}`"
-						class="
-							text-gray-200
-							hover:bg-discord-blurple-630 hover:text-white
-							rounded-md
-							py-2
-							px-3
-							inline-flex
-							items-center
-							text-sm
-							font-semibold
-							focus:outline-none
-							focus-visible:ring-1 focus-visible:ring-white
-						"
-						target="_blank"
-						rel="noopener"
-					>
-						<span class="mr-2">GitHub</span><heroicons-outline-external-link class="h-5 w-5" />
-					</a>
-
-					<a
-						href="https://discordjs.guide"
-						class="
-							text-gray-200
-							hover:bg-discord-blurple-630 hover:text-white
-							rounded-md
-							py-2
-							px-3
-							inline-flex
-							items-center
-							text-sm
-							font-semibold
-							focus:outline-none
-							focus-visible:ring-1 focus-visible:ring-white
-						"
-						target="_blank"
-						rel="noopener"
-					>
-						<span class="mr-2">Guide</span><heroicons-outline-external-link class="h-5 w-5" />
-					</a>
 				</nav>
 
 				<div class="relative h-16 flex md:max-w-md md:w-full lg:max-w-lg">

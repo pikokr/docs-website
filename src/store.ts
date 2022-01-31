@@ -2,13 +2,7 @@ import { InjectionKey } from 'vue';
 import { createStore, useStore as baseUseStore, Store } from 'vuex';
 
 import DocsSource from './data/DocsSource';
-import MainSource from './data/MainSource';
-import CollectionSource from '~/data/CollectionSource';
-import BuildersSource from '~/data/BuildersSource';
-import VoiceSource from '~/data/VoiceSource';
-import RESTSource from '~/data/RESTSource';
-import CommandoSource from '~/data/CommandoSource';
-import RPCSource from '~/data/RPCSource';
+import JejudoSource from './data/JejudoSource';
 
 import { Documentation, DocumentationCustomFile } from './interfaces/Documentation';
 import { SearchTerm, DocumentType, DocumentLink } from './util/search';
@@ -36,16 +30,10 @@ export const key: InjectionKey<Store<State>> = Symbol('docs');
 export const store = createStore<State>({
 	state: {
 		sources: [
-			{ source: MainSource, name: MainSource.name, id: MainSource.id },
-			{ source: CollectionSource, name: CollectionSource.name, id: CollectionSource.id },
-			{ source: BuildersSource, name: BuildersSource.name, id: BuildersSource.id },
-			{ source: VoiceSource, name: VoiceSource.name, id: VoiceSource.id },
-			{ source: RESTSource, name: RESTSource.name, id: RESTSource.id },
-			{ source: CommandoSource, name: CommandoSource.name, id: CommandoSource.id },
-			{ source: RPCSource, name: RPCSource.name, id: RPCSource.id },
+			{ source: JejudoSource, name: JejudoSource.name, id: JejudoSource.id },
 		],
-		source: MainSource,
-		tag: MainSource.defaultTag,
+		source: JejudoSource,
+		tag: JejudoSource.defaultTag,
 		docs: null,
 		branches: [],
 		file: null,
