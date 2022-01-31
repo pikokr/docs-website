@@ -153,8 +153,7 @@ export const store = createStore<State>({
 					docs: null,
 				});
 
-				// @ts-expect-error
-				fetchError.value = error;
+				fetchError.value = error as Error;
 
 				return;
 			}
